@@ -40,6 +40,7 @@ boto3                      = {optional=true, version="^1.15"}
 botocore                   = {optional=true, version="^1.18"}
 pymongo                    = {optional=true, version=">=3"}
 redis                      = {optional=true, version=">=3"}
+pymemcache                 = {optional=true, version="^3.5.0"}
 
 # Optional serialization dependencies
 bson                       = {optional=true, version=">=0.5"}
@@ -67,6 +68,7 @@ exceptiongroup = {version = "^1.0.0-rc.3", python = "^3.10.0"}
 [tool.poetry.extras]
 # Package extras for optional backend dependencies
 dynamodb = ["boto3", "botocore"]
+memcached = ["pymemcache"]
 mongodb  = ["pymongo"]
 redis    = ["redis"]
 
@@ -77,7 +79,7 @@ security = ["itsdangerous"]
 yaml     = ["pyyaml"]
 
 # All optional packages combined, for demo/evaluation purposes
-all      = ["boto3", "botocore", "itsdangerous", "pymongo", "pyyaml", "redis", "ujson"]
+all      = ["boto3", "botocore", "itsdangerous", "pymemcache", "pymongo", "pyyaml", "redis", "ujson"]
 
 # Documentation
 docs     = ["furo", "linkify-it-py", "myst-parser", "sphinx", "sphinx-autodoc-typehints",
